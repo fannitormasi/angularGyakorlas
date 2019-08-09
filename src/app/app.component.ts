@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'first-projekt';
+
+  events = ['sziget', 'sound', 'fezen', 'szin', 'efott'];
+
+  show = true;
+  klikkeljunke = false;
+
+  toggle() {
+    this.show = !this.show;
+  }
+
+  demo(ev: MouseEvent) {
+    console.log(ev.screenX);
+  }
 }

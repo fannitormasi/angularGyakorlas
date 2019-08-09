@@ -1,0 +1,25 @@
+<ul>
+  <li *ngFor="let ev of events">
+    <img [src]="ev.pic" alt="" width="50px" height="50px">
+    {{ev.name | uppercase}}
+    <button (click)="edit(ev.id)">Edit</button>
+    <button (click)="delete(ev.id)">Remove</button>
+    <br>
+  </li>
+</ul>
+
+<div>
+  <label for="eventname">Új esemény neve: </label>
+  <input type="text" #newEventNameInput id="eventname" [value]="modifyEvent.name">
+</div>
+
+<div>
+  <label for="eventpic">Új esememényhez tartzó URL: </label>
+  <input type="text" #newEventPicInput id="eventpic" [value]="modifyEvent.pic">
+</div>
+
+<button (click)="save(newEventNameInput, newEventPicInput)">Save</button>
+
+<pre>
+  {{events | json}}
+</pre>
